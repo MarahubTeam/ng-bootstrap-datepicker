@@ -1,0 +1,11 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/bootstrap-datepicker",
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  },
+  "assets": [
+    "src/scss/**/*.scss",
+    "src/lib/core/dl-date-time-picker/**/*.scss"
+  ]
+}
