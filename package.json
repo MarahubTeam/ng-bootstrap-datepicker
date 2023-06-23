@@ -4,12 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "node --max-old-space-size=994384 node_modules/@angular/cli/bin/ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "build": "ng build bootstrap-datepicker",
     "test": "ng test",
-    "build-prod": "ng build bootstrap-datepicker",
     "npm-pack": "cd dist/bootstrap-datepicker && npm pack",
-    "build-local": "npm run build-prod && npm run npm-pack"
+    "build-local": "npm run build && npm run npm-pack"
   },
   "private": true,
   "dependencies": {
