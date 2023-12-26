@@ -1,35 +1,35 @@
 {
   "name": "ng-bootstrap-datepicker",
-  "version": "16.0.0",
+  "version": "16.0.3",
   "scripts": {
     "ng": "ng",
     "start": "node --max-old-space-size=994384 node_modules/@angular/cli/bin/ng serve",
     "build": "ng build bootstrap-datepicker",
     "test": "ng test",
-    "npm-pack": "cd dist/bootstrap-datepicker && npm pack",
+    "npm-pack": "cd dist/ng-bootstrap-datepicker && npm pack",
     "build-local": "npm run build && npm run npm-pack"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^16.0.0",
-    "@angular/common": "^16.0.0",
-    "@angular/compiler": "^16.0.0",
-    "@angular/core": "^16.0.0",
-    "@angular/forms": "^16.0.0",
-    "@angular/platform-browser": "^16.0.0",
-    "@angular/platform-browser-dynamic": "^16.0.0",
-    "@angular/router": "^16.0.0",
-    "bootstrap": "^4.4.1",
+    "@angular/animations": "^16.0.3",
+    "@angular/common": "^16.0.3",
+    "@angular/compiler": "^16.0.3",
+    "@angular/core": "^16.0.3",
+    "@angular/forms": "^16.0.3",
+    "@angular/platform-browser": "^16.0.3",
+    "@angular/platform-browser-dynamic": "^16.0.3",
+    "@angular/router": "^16.0.3",
+    "bootstrap": "5.3.2",
     "moment": "^2.29.4",
     "open-iconic": "^1.1.1",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
+    "rxjs": "7.5.0",
+    "tslib": "2.6.2",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.0.3",
     "@angular/cli": "~16.0.3",
-    "@angular/compiler-cli": "^16.0.0",
+    "@angular/compiler-cli": "^16.0.3",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
@@ -37,7 +37,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "ng-packagr": "^16.0.0",
+    "ng-packagr": "^16.0.3",
     "typescript": "~5.0.2"
   }
 }
