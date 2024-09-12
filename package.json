@@ -1,6 +1,6 @@
 {
   "name": "ng-bootstrap-datepicker",
-  "version": "16.0.3",
+  "version": "16.0.5",
   "scripts": {
     "ng": "ng",
     "start": "node --max-old-space-size=994384 node_modules/@angular/cli/bin/ng serve",

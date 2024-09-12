@@ -175,7 +175,15 @@ export class DlDateTimePickerComponent<D> implements OnChanges, OnInit, ControlV
    * the value of the date/time picker changes.
    **/
   @Output()
+  readonly valueChange = new EventEmitter<DlDateTimePickerChange<D>>();
+
+  /**
+   * Emits when a `date select` event when date/time is selected
+   **/
+  @Output()
   readonly change = new EventEmitter<DlDateTimePickerChange<D>>();
+
+
   /**
    * Specifies the classes used to display the left icon.
    *
@@ -332,7 +340,7 @@ export class DlDateTimePickerComponent<D> implements OnChanges, OnInit, ControlV
        // @ts-ignore
       this.model = this._viewToModelProvider[this._model.viewName].getModel(this.getStartDate(), this.valueOf);
       this._changed.forEach(f => f(value));
-      this.change.emit(new DlDateTimePickerChange<D>(value));
+      this.valueChange.emit(new DlDateTimePickerChange<D>(value));
     }
   }
 
@@ -476,6 +484,8 @@ export class DlDateTimePickerComponent<D> implements OnChanges, OnInit, ControlV
     this.model = this._viewToModelProvider[nextView].getModel(dateButton.value, this.valueOf);
 
     this.onTouch();
+
+    this.change.emit(new DlDateTimePickerChange<D>(this.value));
   }
 
   /**
