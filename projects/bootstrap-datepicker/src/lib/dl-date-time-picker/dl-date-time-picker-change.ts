@@ -16,14 +16,16 @@ export class DlDateTimePickerChange<D> {
    * The new value of the picker.
    */
   private readonly _value: D;
+  private readonly _viewName?: string;
 
   /**
    * Constructs a new instance.
    * @param newValue
    *  the new value of the date/time picker.
    */
-  constructor(newValue: D) {
+  constructor(newValue: D, viewName?: string) {
     this._value = newValue;
+    this._viewName = viewName;
   }
 
   /**
@@ -32,5 +34,9 @@ export class DlDateTimePickerChange<D> {
    */
   get value(): D {
     return this._value;
+  }
+
+  get viewName(): string {
+    return this._viewName || '';
   }
 }

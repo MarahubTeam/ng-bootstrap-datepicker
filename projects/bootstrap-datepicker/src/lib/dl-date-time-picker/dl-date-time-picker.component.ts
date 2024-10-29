@@ -475,6 +475,8 @@ export class DlDateTimePickerComponent<D> implements OnChanges, OnInit, ControlV
     }
      // @ts-ignore
     let nextView = this._nextView[this._model.viewName];
+    // @ts-ignore
+    const viewName = this._model.viewName;
 
     if ((this.minView || 'minute') === this._model?.viewName) {
       this.value = this._dateAdapter.fromMilliseconds(dateButton.value);
@@ -485,7 +487,7 @@ export class DlDateTimePickerComponent<D> implements OnChanges, OnInit, ControlV
 
     this.onTouch();
 
-    this.change.emit(new DlDateTimePickerChange<D>(this.value));
+    this.change.emit(new DlDateTimePickerChange<D>(this.value, viewName));
   }
 
   /**
