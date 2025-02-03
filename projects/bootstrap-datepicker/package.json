@@ -1,9 +1,9 @@
 {
   "name": "ng-bootstrap-datepicker",
-  "version": "16.0.6",
+  "version": "19.1.4",
   "peerDependencies": {
-    "@angular/common": "^16.0.3",
-    "@angular/core": "^16.0.3"
+    "@angular/common": "^19.1.4",
+    "@angular/core": "^19.1.4"
   },
   "dependencies": {
     "tslib": "^2.3.0"
