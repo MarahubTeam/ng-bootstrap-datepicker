@@ -24,6 +24,7 @@ import { DlDateAdapter } from '../core/dl-date-adapter';
  */
 @Directive({
   selector: 'input[dlDateTimeInput]',
+  standalone: false,
   providers: [
     { provide: NG_VALUE_ACCESSOR, useExisting: DlDateTimeInputDirective, multi: true },
     { provide: NG_VALIDATORS, useExisting: DlDateTimeInputDirective, multi: true }

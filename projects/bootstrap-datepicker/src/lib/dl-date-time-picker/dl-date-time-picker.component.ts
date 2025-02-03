@@ -110,6 +110,7 @@ const VIEWS = [
       multi: true
     }
   ],
+  standalone: false,
   selector: 'dl-date-time-picker',
   styleUrls: ['./dl-date-time-picker.component.scss'],
   templateUrl: './dl-date-time-picker.component.html',
