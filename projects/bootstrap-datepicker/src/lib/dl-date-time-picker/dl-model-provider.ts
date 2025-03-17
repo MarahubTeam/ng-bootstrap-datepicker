@@ -8,7 +8,7 @@
  */
 
 import {SimpleChanges} from '@angular/core';
-import {DlDateTimePickerModel} from './dl-date-time-picker-model';
+import {DlDateTimePickerModel, DlDateTimeRangePickerModel} from './dl-date-time-picker-model';
 
 /**
  * Implemented by classes that provide models for the date/time picker.
@@ -42,7 +42,7 @@ export interface DlModelProvider {
    * @returns
    *  the model representing the specified moment in time.
    */
-  getModel(milliseconds: number, selectedMilliseconds: number): DlDateTimePickerModel;
+  getModel(milliseconds: number, selectedMilliseconds: number): DlDateTimePickerModel | DlDateTimeRangePickerModel;
 
   /**
    * Move the `active` cell one cell down from the specified moment in time.
@@ -62,7 +62,7 @@ export interface DlModelProvider {
    * @returns
    *  the model representing the next model `down` from the specified moment in time.
    */
-  goDown(fromMilliseconds: number, selectedMilliseconds: number): DlDateTimePickerModel;
+  goDown(fromMilliseconds: number, selectedMilliseconds: number): DlDateTimePickerModel | DlDateTimeRangePickerModel;
 
   /**
    * Move the `active` cell to the `last` cell from the specified moment in time.
@@ -82,7 +82,7 @@ export interface DlModelProvider {
    * @returns
    *  a model with the `last` cell in the view as the active cell.
    */
-  goEnd(fromMilliseconds: number, selectedMilliseconds: number): DlDateTimePickerModel;
+  goEnd(fromMilliseconds: number, selectedMilliseconds: number): DlDateTimePickerModel | DlDateTimeRangePickerModel;
 
   /**
    * Move the `active` cell to the `first` cell from the specified moment in time.
@@ -102,7 +102,7 @@ export interface DlModelProvider {
    * @returns
    *  a model with the `first` cell in the view as the active cell.
    */
-  goHome(fromMilliseconds: number, selectedMilliseconds: number): DlDateTimePickerModel;
+  goHome(fromMilliseconds: number, selectedMilliseconds: number): DlDateTimePickerModel | DlDateTimeRangePickerModel;
 
   /**
    * Move the `active` cell one cell to the `left` from the specified moment in time.
@@ -122,7 +122,7 @@ export interface DlModelProvider {
    * @returns
    *  the model representing the next model `left` from the specified moment in time.
    */
-  goLeft(fromMilliseconds: number, selectedMilliseconds: number): DlDateTimePickerModel;
+  goLeft(fromMilliseconds: number, selectedMilliseconds: number): DlDateTimePickerModel | DlDateTimeRangePickerModel;
 
   /**
    * Move the `active` cell one cell to the `right` from the specified moment in time.
@@ -142,7 +142,7 @@ export interface DlModelProvider {
    * @returns
    *  the model representing the next model `right` from the specified moment in time.
    */
-  goRight(fromMilliseconds: number, selectedMilliseconds: number): DlDateTimePickerModel;
+  goRight(fromMilliseconds: number, selectedMilliseconds: number): DlDateTimePickerModel | DlDateTimeRangePickerModel;
 
   /**
    * Move the `active` cell one cell `up` from the specified moment in time.
@@ -162,7 +162,7 @@ export interface DlModelProvider {
    * @returns
    *  the model representing the next model `up` from the specified moment in time.
    */
-  goUp(fromMilliseconds: number, selectedMilliseconds: number): DlDateTimePickerModel;
+  goUp(fromMilliseconds: number, selectedMilliseconds: number): DlDateTimePickerModel | DlDateTimeRangePickerModel;
 
   /**
    * Move the `active` cell one `page-down` from the specified moment in time.
@@ -182,7 +182,7 @@ export interface DlModelProvider {
    * @returns
    *  the model representing the next model `page-down` from the specified moment in time.
    */
-  pageDown(fromMilliseconds: number, selectedMilliseconds: number): DlDateTimePickerModel;
+  pageDown(fromMilliseconds: number, selectedMilliseconds: number): DlDateTimePickerModel | DlDateTimeRangePickerModel;
 
   /**
    * Move the `active` cell one `page-up` from the specified moment in time.
@@ -202,5 +202,5 @@ export interface DlModelProvider {
    * @returns
    *  the model representing the next model `page-up` from the specified moment in time.
    */
-  pageUp(fromMilliseconds: number, selectedMilliseconds: number): DlDateTimePickerModel;
+  pageUp(fromMilliseconds: number, selectedMilliseconds: number): DlDateTimePickerModel | DlDateTimeRangePickerModel;
 }

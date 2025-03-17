@@ -62,7 +62,7 @@
       </div>
     </div>
 
-    <div class="col">
+    <div class="col-9">
       <pre class="bg-light">
         <code id="exampleCode">
     &lt;dl-date-time-picker
@@ -79,7 +79,14 @@
         <dl-date-time-picker [maxView]="maxView" [minView]="minView" [startView]="startView" [minuteStep]="minuteStep"
           [(ngModel)]="selectedDate" (change)="onCustomDateChange($event)"></dl-date-time-picker>
       </div>
-      <p id="selectedDate">Selected Date: {{selectedDate}}</p>
+
+      <div class="border" *ngIf="showCalendar">
+        <dl-date-time-picker-range [(ngModel)]="selectedRangeDateValue" name="selectedRangeDateValue"
+          (change)="onCustomDateChange($event)"></dl-date-time-picker-range>
+      </div>
+
+      <p>selectedRangeDateValue: {{selectedRangeDateValue.startDate}}</p>
+      <p>selectedRangeDateValue: {{selectedRangeDateValue.endDate}}</p>
     </div>
   </div>
 </div>

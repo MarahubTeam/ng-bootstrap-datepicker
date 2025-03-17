@@ -1,9 +1,9 @@
 {
   "name": "ng-bootstrap-datepicker",
-  "version": "19.1.4",
+  "version": "19.1.5",
   "scripts": {
     "ng": "ng",
-    "start": "node --max-old-space-size=994384 node_modules/@angular/cli/bin/ng serve",
+    "start": "node --max-old-space-size=994384 node_modules/@angular/cli/bin/ng serve ng-bootstrap-datepicker",
     "build": "ng build bootstrap-datepicker",
     "test": "ng test",
     "npm-pack": "cd dist/ng-bootstrap-datepicker && npm pack",

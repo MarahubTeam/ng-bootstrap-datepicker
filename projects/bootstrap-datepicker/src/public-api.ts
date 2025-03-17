@@ -18,9 +18,12 @@ export * from './lib/dl-date-time-picker/dl-date-time-picker-change';
 export * from './lib/dl-date-time-picker/dl-date-time-picker-date-button';
 export * from './lib/dl-date-time-picker/dl-date-time-picker-model';
 export * from './lib/dl-date-time-picker/dl-date-time-picker.component';
+export * from './lib/dl-date-time-picker/dl-date-time-picker-range.component';
 export * from './lib/dl-date-time-picker/dl-date-time-picker.module';
+  
 export * from './lib/dl-date-time-picker/dl-model-provider';
 export * from './lib/dl-date-time-picker/dl-model-provider-day';
+export * from './lib/dl-date-time-picker/dl-model-provider-day-range';
 export * from './lib/dl-date-time-picker/dl-model-provider-hour';
 export * from './lib/dl-date-time-picker/dl-model-provider-minute';
 export * from './lib/dl-date-time-picker/dl-model-provider-month';

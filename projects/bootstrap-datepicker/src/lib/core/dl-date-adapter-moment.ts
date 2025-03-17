@@ -2,6 +2,7 @@ import * as _moment from 'moment';
 const moment = (_moment as any).default ? (_moment as any).default : _moment;
 import { Moment } from 'moment';
 import { DlDateAdapter } from './dl-date-adapter';
+import { RangeDate } from '../dl-date-time-picker/dl-date-time-picker-model';
 
 /**
  * Work around for moment namespace conflict when used with webpack and rollup.
@@ -37,9 +38,23 @@ export class DlDateAdapterMoment extends DlDateAdapter<Moment> {
    * @param value
    *  a moment or `null`.
    * @returns
-   *  a `moment.valueOf()` result for the specified `moment` or `null`
+   *  a `moment.valueOf()` result for the specified `moment` or `null` or `undefined`
    */
   toMilliseconds(value: Moment | any): number | null {
     return (value) ? value.valueOf() : undefined;
+  }
+
+  /**
+   * Returns a moment in range time value as milliseconds (local time zone).
+   * @param value
+   *  a moment or `null`.
+   * @returns
+   *  a `moment.valueOf()` result for the specified `moment` or `null`
+   */
+  toRangeMilliseconds(value: Moment | any | RangeDate): number | null | RangeDate {
+    return {
+      startDate: (value?.startDate) ? value?.startDate?.valueOf() : undefined,
+      endDate: (value?.endDate) ? value?.endDate?.valueOf() : undefined,
+    }
   }
 }

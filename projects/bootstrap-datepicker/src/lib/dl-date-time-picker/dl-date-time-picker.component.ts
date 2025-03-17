@@ -231,7 +231,7 @@ export class DlDateTimePickerComponent<D> implements OnChanges, OnInit, ControlV
    * by default but any icon library may be used.
    */
   @Input()
-  rightIconClass = [
+  rightIconClass: any = [
     'oi',
     'oi-chevron-right'
   ];
@@ -303,7 +303,8 @@ export class DlDateTimePickerComponent<D> implements OnChanges, OnInit, ControlV
     // @ts-ignore
     private hourModelComponent: DlHourModelProvider,
     // @ts-ignore
-    private minuteModelComponent: DlMinuteModelProvider) {
+    private minuteModelComponent: DlMinuteModelProvider
+  ) {
 
     this._viewToModelProvider = {
       year: yearModelComponent,

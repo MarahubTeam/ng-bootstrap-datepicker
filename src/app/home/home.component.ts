@@ -4,6 +4,7 @@ import { DlDateTimePickerChange } from 'projects/bootstrap-datepicker/src/public
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
+  standalone: false
 })
 export class HomeComponent {
 
@@ -15,6 +16,19 @@ export class HomeComponent {
   startView = 'day';
   views = ['minute', 'hour', 'day', 'month', 'year'];
 
+
+  today = new Date();
+  tomorrow = new Date(new Date(this.today).setDate(this.today.getDate() + 1));
+
+  selectedRangeDateValue: any = {
+    startDate: this.today,
+    endDate: this.tomorrow
+  }
+
+  constructor() {
+    const tomorrow = new Date(new Date(this.today).setDate(this.today.getDate() + 5));
+  }
+
   /**
    * Sample implementation of a `change` event handler.
    * @param event
@@ -22,7 +36,7 @@ export class HomeComponent {
    */
 
   onCustomDateChange(event: DlDateTimePickerChange<Date | any>) {
-    console.log(event.value);
+    console.log(event.value, 'onCustomDateChange');
   }
 
   /**

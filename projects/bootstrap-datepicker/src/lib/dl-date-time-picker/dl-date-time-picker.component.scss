@@ -69,3 +69,11 @@
   cursor: default;
   color: $dl-abdtp-disabled;
 }
+
+.dl-abdtp-in-range {
+  background-color: #ecf4fd; // Change this to your desired highlight color
+}
+
+.dl-abdtp-hidden-range {
+  visibility: hidden;
+}

@@ -1,0 +1,69 @@
+<div class="text-center dl-abdtp-{{_model?.viewName}}-view d-flex justify-content-between"
+  [attr.data-dl-abdtp-view]="_model?.viewName">
+  <div class="me-2 w-100 mr-2">
+    <div class="row align-items-center no-gutters">
+      <button class="col dl-abdtp-left-button align-items-center" type="button"
+        [attr.aria-label]="_model?.leftButton?.ariaLabel" [attr.dl-abdtp-value]="_model?.leftButton?.value"
+        [attr.title]="_model?.leftButton?.ariaLabel" (click)="_onLeftClick()"><span class="left-icon"
+          [ngClass]="leftIconClass"></span>
+      </button>
+
+      <div *ngIf="_model?.viewName === (this.maxView || 'year'); then maxStartViewLabel else defaultViewLabel;"></div>
+    </div>
+    <div (keydown)="_handleKeyDown($event)">
+      <div *ngIf="_model?.rowStartLabels?.length" class="row no-gutters">
+        <div *ngFor="let label of _model?.rowStartLabels" class="col align-items-center no-gutters dl-abdtp-col-label">
+          {{label}}</div>
+      </div>
+      <div *ngFor="let row of _model?.rowsStart" class="row align-items-center no-gutters">
+        <div *ngFor="let cell of row.cells" role="gridcell"
+          class="col dl-abdtp-date-button dl-abdtp-{{_model?.viewName}}" [ngClass]="cell.classes"
+          [attr.aria-label]="cell.ariaLabel" [attr.aria-disabled]="cell?.classes['dl-abdtp-disabled']"
+          [attr.dl-abdtp-value]="cell.value" [attr.tabindex]="cell?.classes['dl-abdtp-active'] ? 0 : -1"
+          (click)="_onDateClick(cell)" (keydown.space)="_onDateClick(cell)" (keydown.enter)="_onDateClick(cell)">
+          {{cell.display}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ms-2 w-100 ml-2">
+    <div class="row align-items-center no-gutters">
+
+      <div *ngIf="_model?.viewName === (this.maxView || 'year'); then maxEndViewLabel else defaultViewLabel;"></div>
+
+      <button class="col dl-abdtp-right-button" type="button" [attr.aria-label]="_model?.rightButton?.ariaLabel"
+        [attr.dl-abdtp-value]="_model?.rightButton?.value" [attr.title]="_model?.rightButton?.ariaLabel"
+        (click)="_onRightClick()"><span class="right-icon" [ngClass]="rightIconClass"></span>
+      </button>
+    </div>
+    <div (keydown)="_handleKeyDown($event)">
+      <div *ngIf="_model?.rowEndLabels?.length" class="row no-gutters">
+        <div *ngFor="let label of _model?.rowEndLabels" class="col align-items-center no-gutters dl-abdtp-col-label">
+          {{label}}</div>
+      </div>
+      <div *ngFor="let row of _model?.rowsEnd" class="row align-items-center no-gutters">
+        <div *ngFor="let cell of row.cells" role="gridcell"
+          class="col dl-abdtp-date-button dl-abdtp-{{_model?.viewName}}" [ngClass]="cell.classes"
+          [attr.aria-label]="cell.ariaLabel" [attr.aria-disabled]="cell?.classes['dl-abdtp-disabled']"
+          [attr.dl-abdtp-value]="cell.value" [attr.tabindex]="cell?.classes['dl-abdtp-active'] ? 0 : -1"
+          (click)="_onDateClick(cell)" (keydown.space)="_onDateClick(cell)" (keydown.enter)="_onDateClick(cell)">
+          {{cell.display}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #maxStartViewLabel>
+  <div class="col-10 dl-abdtp-view-label">{{_model?.viewStartLabel}}</div>
+</ng-template>
+<ng-template #maxEndViewLabel>
+  <div class="col-10 dl-abdtp-view-label">{{_model?.viewEndLabel}}</div>
+</ng-template>
+<ng-template #defaultViewLabel>
+  <button class="col-10 dl-abdtp-view-label dl-abdtp-up-button" type="button"
+    [attr.aria-label]="_model?.upButton?.ariaLabel" [attr.dl-abdtp-value]="_model?.upButton?.value"
+    [attr.title]="_model?.upButton?.ariaLabel" (click)="_onUpClick()"
+    [ngClass]="_model?.upButton?.classes">{{_model?.viewStartLabel}}&nbsp;<span class="up-icon"
+      [ngClass]="upIconClass"></span>
+  </button>
+</ng-template>

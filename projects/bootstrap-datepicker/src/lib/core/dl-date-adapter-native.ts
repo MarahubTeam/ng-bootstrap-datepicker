@@ -1,3 +1,4 @@
+import { RangeDate } from '../dl-date-time-picker/dl-date-time-picker-model';
 import { DlDateAdapter } from './dl-date-adapter';
 
 /**
@@ -25,5 +26,20 @@ export class DlDateAdapterNative extends DlDateAdapter<Date> {
    */
   toMilliseconds(value: Date | any): number | null {
     return (value) ? value.getTime() : undefined;
+  }
+
+
+  /**
+   * Returns a moment in range time value as milliseconds (local time zone).
+   * @param value
+   *  a moment or `null`.
+   * @returns
+   *  a `moment.valueOf()` result for the specified `moment` or `null`
+   */
+  toRangeMilliseconds(value: Date | any | RangeDate): number | null | RangeDate {
+    return {
+      startDate: (value?.startDate) ? value.startDate?.getTime() : undefined,
+      endDate: (value?.endDate) ? value.endDate?.getTime() : undefined,
+    }
   }
 }

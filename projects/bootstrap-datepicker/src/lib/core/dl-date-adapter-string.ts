@@ -3,6 +3,7 @@ import * as _moment from 'moment';
 const moment = (_moment as any).default ? (_moment as any).default : _moment;
 import { DlDateAdapter } from './dl-date-adapter';
 import { DL_DATE_TIME_INPUT_FORMATS, DL_DATE_TIME_MODEL_FORMAT } from './dl-date-time-string-format';
+import { RangeDate } from '../dl-date-time-picker/dl-date-time-picker-model';
 
 /**
  * Work around for moment namespace conflict when used with webpack and rollup.
@@ -65,6 +66,25 @@ export class DlDateAdapterString extends DlDateAdapter<string> {
     if (value !== undefined && value !== null) {
       const newMoment = moment(value, this.inputFormats, true);
       return newMoment.isValid() ? newMoment.valueOf() : undefined;
+    }
+  }
+
+  /**
+  * Returns the specified number.
+  * @param value
+  *  a moment time time or `null`
+  * @returns
+  *  the milliseconds for the specified value or `null`
+  *  `null` is returned when value is not a valid input date string
+  */
+  toRangeMilliseconds(value: string | any | RangeDate): number | any | RangeDate {
+    if (value !== undefined && value !== null && value.startDate !== undefined && value.startDate !== null && value.endDate !== undefined && value.endDate !== null) {
+      const newMomentStart = moment(value.startDate, this.inputFormats, true); 
+      const newMomentEnd = moment(value.endDate, this.inputFormats, true); 
+      return {
+        startDate: newMomentStart.isValid() ? newMomentStart.valueOf() : undefined,
+        endDate: newMomentEnd.isValid() ? newMomentEnd.valueOf() : undefined,
+      }
     }
   }
 }

@@ -7,6 +7,8 @@
  * found in the LICENSE file at https://github.com/dalelotts/angular-bootstrap-datetimepicker/blob/master/LICENSE
  */
 
+import { RangeDate } from "./dl-date-time-picker-model";
+
 /**
  * Emitted when the value of a date/time picker changes.
  */
@@ -15,7 +17,7 @@ export class DlDateTimePickerChange<D> {
   /**
    * The new value of the picker.
    */
-  private readonly _value: D;
+  private readonly _value: D | RangeDate;
   private readonly _viewName?: string;
 
   /**
@@ -32,7 +34,7 @@ export class DlDateTimePickerChange<D> {
    * Get the new value of the date/time picker.
    * @returns the new value or null.
    */
-  get value(): D {
+  get value(): D | RangeDate {
     return this._value;
   }
 

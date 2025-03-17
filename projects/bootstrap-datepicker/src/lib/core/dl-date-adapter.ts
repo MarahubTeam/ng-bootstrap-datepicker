@@ -1,3 +1,5 @@
+import { RangeDate } from "../dl-date-time-picker/dl-date-time-picker-model";
+
 /**
  * Determines the model type of the Date/Time picker another type.
  */
@@ -20,4 +22,13 @@ export abstract class DlDateAdapter<D> {
    *  a moment in` for the specified value or `null`
    */
   abstract toMilliseconds(value: D | null): number | null;
+
+  /**
+   * Returns a moment in time value as milliseconds of RangeDate (local time zone).
+   * @param value
+   *  a moment in time value as `D` or `null`.
+   * @returns
+   *  a moment in` for the specified value or `null`
+   */
+  abstract toRangeMilliseconds(value: RangeDate | null): number | null | RangeDate;
 }
