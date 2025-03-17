@@ -64,14 +64,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
             "options": {
-            "buildTarget": "ng-bootstrap-datepicker:build"
+            "browserTarget": "ng-bootstrap-datepicker:build"
           },
           "configurations": {
             "production": {
-              "buildTarget": "ng-bootstrap-datepicker:build:production"
+              "browserTarget": "ng-bootstrap-datepicker:build:production"
             },
             "development": {
-              "buildTarget": "ng-bootstrap-datepicker:build:development"
+              "browserTarget": "ng-bootstrap-datepicker:build:development"
             }
           },
           "defaultConfiguration": "development"
